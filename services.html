@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PlanGenix Services — Tender programming, construction scheduling, project controls and reporting dashboards.">
+  <title>Services | PlanGenix</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    .service-detail {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .service-detail:last-child { border-bottom: none; }
+    .service-detail.reverse { direction: rtl; }
+    .service-detail.reverse > * { direction: ltr; }
+
+    .service-detail-icon {
+      width: 72px; height: 72px; border-radius: 18px;
+      background: rgba(0,196,212,.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; margin-bottom: 1.5rem;
+    }
+    .service-detail h3 {
+      font-family: var(--font-serif); font-size: 1.6rem;
+      color: var(--navy); margin-bottom: 1rem;
+    }
+    .service-detail p { color: var(--gray-600); margin-bottom: 1rem; font-size: .95rem; }
+
+    .service-detail-visual {
+      background: var(--off-white); border-radius: var(--radius-lg);
+      padding: 2.5rem; border: 1px solid var(--gray-200);
+    }
+    .deliverable-list { display: flex; flex-direction: column; gap: .75rem; margin-top: 1.25rem; }
+    .deliverable-item {
+      display: flex; align-items: center; gap: .75rem;
+      font-size: .9rem; color: var(--gray-800);
+    }
+    .deliverable-item::before {
+      content: ''; width: 8px; height: 8px; border-radius: 50%;
+      background: var(--gold); flex-shrink: 0;
+    }
+    .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
+    .mini-stat {
+      text-align: center; padding: 1.2rem .8rem;
+      background: var(--white); border-radius: var(--radius); border: 1px solid var(--gray-200);
+    }
+    .mini-stat strong { display: block; font-family: var(--font-serif); font-size: 1.5rem; color: var(--navy); }
+    .mini-stat span { font-size: .72rem; color: var(--gray-400); letter-spacing: .05em; text-transform: uppercase; }
+
+    @media (max-width: 820px) {
+      .service-detail { grid-template-columns: 1fr; gap: 2rem; }
+      .service-detail.reverse { direction: ltr; }
+      .stat-row { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAV ========== -->
+  <nav class="site-nav scrolled" id="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.svg" alt="PlanGenix" style="height:36px; display:block; ">
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HERO ========== -->
+  <section class="page-hero">
+    <div class="container page-hero-content">
+      <span class="section-label">What We Offer</span>
+      <h1>Scheduling &amp; Controls<br>Services</h1>
+      <p>From a single tender program to full project controls through construction — we tailor our services to exactly what your project needs.</p>
+    </div>
+  </section>
+
+  <!-- ========== SERVICE DETAILS ========== -->
+  <section class="section">
+    <div class="container">
+
+      <!-- 1: Tender Programming -->
+      <div class="service-detail reveal" id="tender">
+        <div>
+          <div class="service-detail-icon">📅</div>
+          <h3>Tender Programming</h3>
+          <p>A well-prepared tender program is one of the most powerful tools in your bid. It demonstrates your methodology, shows the Principal you've thought through every phase of delivery, and gives evaluators confidence that you can actually do what you're proposing.</p>
+          <p>We prepare logic-driven, credible tender programs that align with your methodology statement and commercial strategy — without over-engineering. Tender programs at this stage don't need resource loading; they need to be clear, achievable, and compelling.</p>
+          <div class="deliverable-list">
+            <div class="deliverable-item">Primavera P6 or MS Project native files</div>
+            <div class="deliverable-item">PDF program export (print-ready, submission format)</div>
+            <div class="deliverable-item">Critical path and milestone narrative</div>
+            <div class="deliverable-item">Method statement alignment</div>
+            <div class="deliverable-item">Fast turnaround — typically 24–72 hours</div>
+          </div>
+        </div>
+        <div class="service-detail-visual">
+          <div class="stat-row">
+            <div class="mini-stat"><strong>24–72h</strong><span>Turnaround</span></div>
+            <div class="mini-stat"><strong>200+</strong><span>Tenders Done</span></div>
+            <div class="mini-stat"><strong>P6 / MSP</strong><span>Software</span></div>
+          </div>
+          <div style="padding: 1.25rem; background: rgba(0,196,212,.07); border-radius: var(--radius); border-left: 3px solid var(--gold);">
+            <p style="font-size:.85rem; color:var(--gray-800); margin:0; font-style:italic;">"A compelling tender program doesn't just show what you'll build — it shows how and why, in a way the evaluator can trust."</p>
+          </div>
+          <div style="margin-top: 1.25rem; padding: 1rem; background: var(--white); border-radius: var(--radius); border: 1px solid var(--gray-200);">
+            <p style="font-size:.82rem; color:var(--gray-800); margin:0;"><strong>Sectors covered:</strong> Defence, Health, Education, Government, Commercial, Residential, Civil, Community &amp; Aged Care.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2: Construction Programming -->
+      <div class="service-detail reverse reveal" id="construction">
+        <div>
+          <div class="service-detail-icon">🏗️</div>
+          <h3>Construction Programming</h3>
+          <p>Your contract baseline program is the document that governs your project's time performance. It needs to be contractually compliant, logically sound, and actually useful — not just a document to satisfy the Superintendent.</p>
+          <p>We develop detailed construction programs that are logic-driven, structured to support contract administration, and built to be updated throughout the project lifecycle. From Level 2 phase programs through to detailed Level 3–4 works programs.</p>
+          <div class="deliverable-list">
+            <div class="deliverable-item">Contract baseline program — Level 2, 3, or 4</div>
+            <div class="deliverable-item">Logic-driven activity sequences</div>
+            <div class="deliverable-item">Key date and milestone tracking</div>
+            <div class="deliverable-item">3-week lookahead programs</div>
+            <div class="deliverable-item">Program revisions and update management</div>
+          </div>
+        </div>
+        <div class="service-detail-visual">
+          <p style="font-size:.72rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem;">Typical Program Levels</p>
+          <div style="display:flex; flex-direction:column; gap:.75rem;">
+            <div style="padding:.75rem 1rem; background:var(--white); border-radius:var(--radius); border:1px solid var(--gray-200);">
+              <div style="font-size:.8rem; font-weight:600; color:var(--navy); margin-bottom:.25rem;">Level 2 — Phase Program</div>
+              <div style="font-size:.75rem; color:var(--gray-600);">Major work packages and key dependencies</div>
+            </div>
+            <div style="padding:.75rem 1rem; background:rgba(0,196,212,.06); border-radius:var(--radius); border:1px solid rgba(0,196,212,.25);">
+              <div style="font-size:.8rem; font-weight:600; color:var(--navy); margin-bottom:.25rem;">Level 3 — Works Program <span style="font-size:.7rem; color:var(--gold); font-weight:600;">(Most common)</span></div>
+              <div style="font-size:.75rem; color:var(--gray-600);">Full activity-level schedule with logic and durations</div>
+            </div>
+            <div style="padding:.75rem 1rem; background:var(--white); border-radius:var(--radius); border:1px solid var(--gray-200);">
+              <div style="font-size:.8rem; font-weight:600; color:var(--navy); margin-bottom:.25rem;">Level 4 — Detailed Works Program</div>
+              <div style="font-size:.75rem; color:var(--gray-600);">Granular sequencing for complex or high-risk scopes</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3: Project Controls -->
+      <div class="service-detail reveal" id="controls">
+        <div>
+          <div class="service-detail-icon">📊</div>
+          <h3>Project Controls</h3>
+          <p>Without proper controls, you're managing a project by feel — and by the time a problem becomes visible, it's often too late to recover. We implement project controls frameworks that give you genuine early warning and real decision-making capability.</p>
+          <p>Our project controls services are calibrated to your project type, contract form, and reporting requirements — from simple schedule updates to full EVM-integrated cost and schedule performance tracking.</p>
+          <div class="deliverable-list">
+            <div class="deliverable-item">Schedule update and maintenance</div>
+            <div class="deliverable-item">Earned Value Management (EVM)</div>
+            <div class="deliverable-item">Cost and schedule performance indices (CPI / SPI)</div>
+            <div class="deliverable-item">Estimate at Completion (EAC) forecasting</div>
+            <div class="deliverable-item">Risk register integration and schedule risk analysis</div>
+          </div>
+        </div>
+        <div class="service-detail-visual">
+          <p style="font-size:.72rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem;">EVM Snapshot</p>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:.75rem; margin-bottom:1.25rem;">
+            <div style="padding:1rem; background:var(--white); border-radius:var(--radius); text-align:center; border:1px solid var(--gray-200);">
+              <div style="font-family:var(--font-serif); font-size:1.5rem; color:#0a9a4a;">1.03</div>
+              <div style="font-size:.72rem; color:var(--gray-600); margin-top:.2rem;">Schedule Perf. Index (SPI)</div>
+            </div>
+            <div style="padding:1rem; background:var(--white); border-radius:var(--radius); text-align:center; border:1px solid var(--gray-200);">
+              <div style="font-family:var(--font-serif); font-size:1.5rem; color:#1a3a9a;">0.97</div>
+              <div style="font-size:.72rem; color:var(--gray-600); margin-top:.2rem;">Cost Perf. Index (CPI)</div>
+            </div>
+          </div>
+          <div style="height:8px; background:var(--gray-200); border-radius:4px; overflow:hidden; margin-bottom:.4rem;">
+            <div style="height:100%; width:67%; background:var(--gold); border-radius:4px;"></div>
+          </div>
+          <div style="font-size:.72rem; color:var(--gray-600);">67% Physical Complete — Week 34 of 50</div>
+        </div>
+      </div>
+
+      <!-- 4: Reporting & Dashboards -->
+      <div class="service-detail reverse reveal" id="reporting">
+        <div>
+          <div class="service-detail-icon">📈</div>
+          <h3>Reporting &amp; Project Dashboards</h3>
+          <p>Great reporting turns complex schedule data into clear, actionable information for your project team and stakeholders. We design and build reporting frameworks — from standard weekly lookaheads through to interactive Power BI dashboards — that are meaningful, not just compliant.</p>
+          <p>Whether you need a simple progress report for a small job or a live executive dashboard tracking a major program, we'll design something that actually gets used.</p>
+          <div class="deliverable-list">
+            <div class="deliverable-item">Weekly 3-week lookahead reports</div>
+            <div class="deliverable-item">Monthly project control reports</div>
+            <div class="deliverable-item">S-curve and progress tracking charts</div>
+            <div class="deliverable-item">Power BI interactive project dashboards</div>
+            <div class="deliverable-item">Milestone and key date trackers</div>
+          </div>
+        </div>
+        <div class="service-detail-visual">
+          <p style="font-size:.72rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem;">Standard Reporting Cadence</p>
+          <div style="display:flex; flex-direction:column; gap:.6rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:.75rem 1rem; background:var(--white); border-radius:var(--radius); border:1px solid var(--gray-200);">
+              <span style="font-size:.85rem; font-weight:600; color:var(--navy);">3-Week Lookahead</span>
+              <span style="font-size:.75rem; background:rgba(0,196,212,.1); color:var(--gold); font-weight:600; padding:.2rem .65rem; border-radius:4px;">Weekly</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:.75rem 1rem; background:var(--white); border-radius:var(--radius); border:1px solid var(--gray-200);">
+              <span style="font-size:.85rem; font-weight:600; color:var(--navy);">Schedule Update</span>
+              <span style="font-size:.75rem; background:rgba(0,196,212,.1); color:var(--gold); font-weight:600; padding:.2rem .65rem; border-radius:4px;">Fortnightly</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:.75rem 1rem; background:rgba(0,196,212,.05); border-radius:var(--radius); border:1px solid rgba(0,196,212,.2);">
+              <span style="font-size:.85rem; font-weight:600; color:var(--navy);">Project Control Report</span>
+              <span style="font-size:.75rem; background:rgba(0,196,212,.1); color:var(--gold); font-weight:600; padding:.2rem .65rem; border-radius:4px;">Monthly</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:.75rem 1rem; background:var(--white); border-radius:var(--radius); border:1px solid var(--gray-200);">
+              <span style="font-size:.85rem; font-weight:600; color:var(--navy);">Board / Executive Dashboard</span>
+              <span style="font-size:.75rem; background:rgba(0,196,212,.1); color:var(--gold); font-weight:600; padding:.2rem .65rem; border-radius:4px;">As Required</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== SECTORS ========== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header centered reveal">
+        <span class="section-label">Sectors</span>
+        <h2 class="section-title">Industries We Serve</h2>
+        <p class="section-sub">Deep sector knowledge across the full spectrum of Australian construction and infrastructure delivery.</p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center;" class="reveal">
+        <span class="sector-pill">🛡️ Defence</span>
+        <span class="sector-pill">🏥 Health &amp; Aged Care</span>
+        <span class="sector-pill">🏫 Education</span>
+        <span class="sector-pill">🏢 Commercial &amp; Fitout</span>
+        <span class="sector-pill">🏠 Residential</span>
+        <span class="sector-pill">🏛️ Government &amp; Council</span>
+        <span class="sector-pill">🏗️ Civil &amp; Infrastructure</span>
+        <span class="sector-pill">⛪ Community &amp; Civic</span>
+        <span class="sector-pill">🌿 Heritage &amp; National Parks</span>
+        <span class="sector-pill">🏭 Industrial &amp; Mining</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta-banner">
+    <div class="container reveal">
+      <h2>Ready to Get Started?</h2>
+      <p>Tell us about your project — we'll turn around a tailored proposal within one business day.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+        <a href="projects.html" class="btn btn-outline">See Our Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="logo.svg" alt="PlanGenix" style="height:36px; margin-bottom:.75rem; ">
+          <p>Expert tender programming and project controls services for contractors and developers across Australia.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Pages</h5>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="#tender">Tender Programming</a>
+          <a href="#construction">Construction Programs</a>
+          <a href="#controls">Project Controls</a>
+          <a href="#reporting">Reporting &amp; Dashboards</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <address>
+            Sydney, NSW<br>
+            Australia<br><br>
+            <a href="mailto:mandip.desai@me.com">mandip.desai@me.com</a><br>
+            <a href="tel:+61425462424">+61 425 462 424</a>
+          </address>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 PlanGenix. All rights reserved.</span>
+        <span>Sydney, Australia</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <style>
+    .sector-pill {
+      padding: .5rem 1.1rem; border: 1.5px solid var(--gray-200);
+      border-radius: 24px; font-size: .82rem; font-weight: 500;
+      color: var(--gray-800); transition: all var(--transition);
+    }
+    .sector-pill:hover { border-color: var(--gold); color: var(--navy); background: rgba(0,196,212,.06); }
+  </style>
+</body>
+</html>

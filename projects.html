@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PlanGenix Projects — Tender programs, construction programmes and project controls engagements across defence, health, education, government and commercial sectors.">
+  <title>Projects | PlanGenix</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    .filter-tabs { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .filter-tab {
+      padding: .5rem 1.2rem; border-radius: 24px;
+      border: 1.5px solid var(--gray-200); font-size: .82rem; font-weight: 600;
+      color: var(--gray-600); cursor: pointer; background: var(--white);
+      transition: all var(--transition);
+    }
+    .filter-tab:hover { border-color: var(--navy); color: var(--navy); background: rgba(10,22,40,.05); }
+    .filter-tab.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+
+    .project-card-full {
+      background: var(--white); border-radius: var(--radius-lg);
+      overflow: hidden; border: 1px solid var(--gray-200);
+      transition: all var(--transition); display: flex; flex-direction: column;
+    }
+    .project-card-full:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+    .project-card-full .project-body { flex: 1; display: flex; flex-direction: column; }
+
+    .project-meta {
+      display: flex; gap: 1.5rem; margin-top: 1rem;
+      padding-top: 1rem; border-top: 1px solid var(--gray-100); flex-wrap: wrap;
+    }
+    .project-meta-item { display: flex; flex-direction: column; gap: .15rem; }
+    .project-meta-item strong { font-size: .7rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--gray-400); }
+    .project-meta-item span { font-size: .82rem; color: var(--navy); font-weight: 500; }
+
+    .featured-project {
+      display: grid; grid-template-columns: 1fr 1fr;
+      background: var(--navy); border-radius: var(--radius-lg);
+      overflow: hidden; margin-bottom: 3rem;
+    }
+    .featured-project-content {
+      padding: 3rem; display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .featured-project-thumb {
+      display: flex; align-items: center; justify-content: center;
+      font-size: 5rem; min-height: 280px;
+    }
+    .featured-project h2 { font-family: var(--font-serif); color: var(--white); font-size: 1.7rem; margin-bottom: 1rem; }
+    .featured-project p { color: rgba(255,255,255,.65); font-size: .9rem; margin-bottom: 1.5rem; }
+    .featured-meta { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .featured-meta-item strong { display: block; font-family: var(--font-serif); font-size: 1.4rem; color: var(--gold); }
+    .featured-meta-item span { font-size: .72rem; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: .06em; }
+
+    .note-banner {
+      background: rgba(0,196,212,.07); border: 1px solid rgba(0,196,212,.2);
+      border-radius: var(--radius-lg); padding: 1.25rem 1.75rem;
+      margin-bottom: 2.5rem; font-size: .875rem; color: var(--gray-600);
+    }
+    .note-banner strong { color: var(--navy); }
+
+    @media (max-width: 820px) {
+      .featured-project { grid-template-columns: 1fr; }
+      .featured-project-thumb { min-height: 160px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAV ========== -->
+  <nav class="site-nav scrolled" id="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.svg" alt="PlanGenix" style="height:36px; display:block;">
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HERO ========== -->
+  <section class="page-hero">
+    <div class="container page-hero-content">
+      <span class="section-label">Our Work</span>
+      <h1>Projects &amp; Engagements</h1>
+      <p>A selection of tender programs, construction schedules and controls engagements delivered across Australia — spanning defence, health, education, government and commercial sectors.</p>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Featured -->
+      <div class="featured-project reveal">
+        <div class="featured-project-content">
+          <div>
+            <div class="project-tags" style="margin-bottom: 1rem;">
+              <span class="tag">Featured</span>
+              <span class="tag">Defence</span>
+              <span class="tag">Construction Programme</span>
+              <span class="tag">Project Controls</span>
+            </div>
+            <h2>RAAF Williamtown — Airside Civil Works</h2>
+            <p>Construction programme and methodology for major airside civil and infrastructure works at RAAF Base Williamtown. The programme required careful phasing around active flight operations with strict compliance with defence facility requirements and coordination across civil, electrical, and services trades.</p>
+            <div class="featured-meta">
+              <div class="featured-meta-item">
+                <strong>Defence</strong>
+                <span>Sector</span>
+              </div>
+              <div class="featured-meta-item">
+                <strong>NSW</strong>
+                <span>Location</span>
+              </div>
+              <div class="featured-meta-item">
+                <strong>Construction</strong>
+                <span>Programme Type</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="featured-project-thumb" style="background: linear-gradient(135deg, #0a1628, #0f2d50);">🛡️</div>
+      </div>
+
+      <div class="note-banner reveal">
+        <strong>Note:</strong> Many of the tender programs below were prepared in collaboration with <strong>Plannery</strong>, one of Australia's most active tender scheduling firms, where I have worked as a freelance planner. Non-Plannery projects are from full-time roles at Aurify Constructions, Thales and Sydney Trains. A full project list is available on request.
+      </div>
+
+      <!-- Filter -->
+      <div class="filter-tabs" id="filter-tabs">
+        <button class="filter-tab active" data-filter="all">All Projects</button>
+        <button class="filter-tab" data-filter="defence">Defence</button>
+        <button class="filter-tab" data-filter="health">Health &amp; Aged Care</button>
+        <button class="filter-tab" data-filter="education">Education</button>
+        <button class="filter-tab" data-filter="government">Government &amp; Civic</button>
+        <button class="filter-tab" data-filter="commercial">Commercial</button>
+      </div>
+
+      <!-- Grid -->
+      <div class="projects-grid" id="projects-grid">
+
+        <!-- ===== DEFENCE ===== -->
+        <div class="project-card-full reveal" data-category="defence">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #0a1628, #0f2a50);">⚓</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Defence</span><span class="tag">Project Controls</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>HMAS DDG Fleet — Thales</h3>
+              <p>Project planner on the Royal Australian Navy's DDG fleet program at Thales. Built and maintained integrated P6 schedules, ran EVM reviews, developed Power BI dashboards for cost and schedule performance, and integrated subcontractor programs into the master schedule.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Defence</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Sydney, NSW</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Project Controls</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== GOVERNMENT & CIVIC ===== -->
+        <div class="project-card-full reveal" data-category="government">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #101828, #182535);">🚇</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Government</span><span class="tag">Project Controls</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>Sydney Trains — Digital Systems Transformation</h3>
+              <p>Integrated Master Schedule development and schedule performance reporting across the Digital Systems Transformation, Rail Timetable System and Rail Service Integration Program for Sydney Trains. Critical path analysis and programme governance across a complex multi-workstream portfolio.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Government / Rail</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Sydney, NSW</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Project Controls</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="government">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #151a28, #1e2840);">🏛️</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Government</span><span class="tag">Construction Programme</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>Australian National Maritime Museum — Cooling Towers</h3>
+              <p>Construction programme for cooling tower replacement works at the Australian National Maritime Museum in Darling Harbour. Programme coordinated around ongoing public museum operations with strict access and noise requirements.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Government / Cultural</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Darling Harbour, NSW</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Construction Programme</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="government">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #151a2a, #1e2842);">🌿</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Government</span><span class="tag">Construction Programme</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>Australian National Maritime Museum — Sustainability Works</h3>
+              <p>Construction programme for sustainability and building services upgrade works at the ANMM. Planned around the active museum environment with multiple trade packages running concurrently.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Government / Cultural</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Darling Harbour, NSW</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Construction Programme</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="government">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #121a12, #1c2a1c);">🌲</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Government</span><span class="tag">Construction Programme</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>Wattamolla Visitor Precinct — Amenity Centre</h3>
+              <p>Construction programme for a new amenity facility within the Royal National Park at Wattamolla. Tight access constraints through national park roads and strict National Parks and Wildlife Service requirements shaped the delivery approach.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Government / Parks</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Wattamolla, NSW</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Construction Programme</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="government">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #18141e, #26202e);">🏛️</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Government</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>Vaucluse House</h3>
+              <p>Tender program for conservation and restoration works at the historic 19th-century Vaucluse House estate. Heritage programme requirements with careful coordination of trades across the listed interior spaces and formal gardens.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Government / Heritage</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Vaucluse, NSW</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="government">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #101e1e, #162a2a);">🏊</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Government</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>Diamond Creek Outdoor Pool</h3>
+              <p>Tender program for a comprehensive upgrade of the Diamond Creek outdoor pool facility including new change rooms, a splash area and accessible amenities. Seasonal construction windows shaped the programme sequencing.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Government / Aquatic</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Diamond Creek, VIC</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="government">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #0e1a1a, #162828);">🏟️</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Government</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>KCC Walter Galt Pavilion</h3>
+              <p>Tender program for the redevelopment of the Walter Galt sporting pavilion in Parkdale, improving changeroom and community sporting infrastructure for Kingston City Council.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Government / Sport</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Parkdale, VIC</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="government">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #0e1e1e, #14282a);">🏊</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Government</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>Maribyrnong Aquatic Centre</h3>
+              <p>Tender program for the major upgrade of the Maribyrnong Aquatic Centre including new splash zones, water slides, change rooms and an energy transition to all-electric services.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Government / Aquatic</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Maribyrnong, VIC</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="government">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #121822, #1c2432);">🏘️</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Government</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>Nairm Marr Djambana</h3>
+              <p>Tender program for an Aboriginal community gathering place and service facility in Frankston. A community-controlled project delivering culturally appropriate spaces for the local Indigenous community.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Government / Community</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Frankston, VIC</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="government">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #181420, #24202e);">🏛️</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Government</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>SMC — Heritage Wall</h3>
+              <p>Tender program for heritage wall restoration works. Programme sequenced around access restrictions and the careful requirements of working with listed heritage fabric.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Government / Heritage</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>NSW</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="government">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #121a14, #1c2a1e);">⚽</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Government</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>Percy Treyvaud Oval</h3>
+              <p>Tender program for redevelopment works at Percy Treyvaud Memorial Park in Malvern East as part of a major multi-use sports precinct upgrade including indoor courts, bowling green and tennis facilities.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Government / Sport</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Malvern East, VIC</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="government">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #161422, #22203a);">🚒</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Government</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>FRNSW — Wentworthville Fire Station</h3>
+              <p>Tender program for the replacement of Wentworthville fire station with a modern facility including an additional engine bay and updated crew amenities, delivered under NSW Government procurement.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Government / Emergency Services</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Wentworthville, NSW</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="government">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #141220, #20203a);">🚒</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Government</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>FRNSW — MacMasters Beach Fire Station</h3>
+              <p>Tender program for a new fire station facility at MacMasters Beach on the Central Coast, catering to both retained and volunteer brigades serving the coastal and hinterland area.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Government / Emergency Services</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>MacMasters Beach, NSW</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="government">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #12101e, #1e1c32);">🚒</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Government</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>FRNSW — Narooma Fire Station</h3>
+              <p>Tender program for a new retained fire station in Narooma on the South Coast of NSW, providing the community with a 24/7 response capability on Yuin Nation lands.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Government / Emergency Services</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Narooma, NSW</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="government">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #0e1820, #162430);">🚃</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Government</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>Yarra Trams — Bus Depot Amenities Renewal</h3>
+              <p>Tender program for amenities renewal works across Yarra Trams depot facilities, improving staff welfare facilities as part of ongoing tram network infrastructure maintenance.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Government / Transport</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Melbourne, VIC</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== HEALTH & AGED CARE ===== -->
+        <div class="project-card-full reveal" data-category="health">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #0e1e28, #162a38);">🏥</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Health</span><span class="tag">Construction Programme</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>St Luke's Hospital — Potts Point</h3>
+              <p>Construction programme for refurbishment works at St Luke's Hospital in Potts Point. Works were carefully sequenced to maintain full hospital operations throughout the construction period.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Health</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Potts Point, NSW</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Construction Programme</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="health">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #0e1c26, #162838);">🏥</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Health</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>Monash Health Clayton — P Block</h3>
+              <p>Tender program for works at Monash Medical Centre's P Block in Clayton, one of Victoria's major teaching and research hospitals. Programme phased to protect clinical operations throughout.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Health</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Clayton, VIC</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="health">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #101e28, #182a3a);">🏘️</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Aged Care</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>Regis Ferny Grove — Refurbishment</h3>
+              <p>Tender program for refurbishment works at the Regis Ferny Grove residential aged care facility in Queensland. Sequenced to minimise disruption to the 122-bed operational facility and its residents.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Aged Care</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Ferny Grove, QLD</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="health">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #0e1c22, #16282e);">🏥</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Health</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>Kingsway MCHC Renewal</h3>
+              <p>Tender program for the renewal of a Maternal and Child Health Centre in Melton, providing improved free health services for families from newborns through to school entry age.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Health / Community</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Melton, VIC</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== EDUCATION ===== -->
+        <div class="project-card-full reveal" data-category="education">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #141a10, #1e2818);">🏫</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Education</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>St Josephs Aberdeen</h3>
+              <p>Tender program for works at St Joseph's Catholic secondary college in the Upper Hunter region of NSW, a school serving Years 7 to 12 in a regional community.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Education</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Aberdeen, NSW</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="education">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #151a12, #1e2818);">🎓</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Education</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>TAFE NSW Ultimo — Nursing Facilities</h3>
+              <p>Tender program for the refurbishment of nursing and general learning facilities at the TAFE NSW Ultimo campus in inner Sydney, coordinated around a live campus environment.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Education / TAFE</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Ultimo, NSW</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="education">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #121812, #1c2a1c);">🌿</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Education</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>University of Melbourne — Temporary Landscaping</h3>
+              <p>Tender program for temporary landscaping and environmental management works at the University of Melbourne's Parkville campus during the broader Student Precinct redevelopment.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Education / University</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Parkville, VIC</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="education">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #141814, #1e2820);">🏫</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Education</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>MACS — Our Lady of Fatima Primary School</h3>
+              <p>Tender program for new school facilities at Our Lady of Fatima Catholic Primary School in Rosebud including a STEM room, student toilets and garden area, under Melbourne Archdiocese Catholic Schools.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Education</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Rosebud, VIC</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="education">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #131614, #1e241e);">🏫</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Education</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>St Jude's Primary School</h3>
+              <p>Tender program for facility upgrade works at St Jude's Catholic Primary School, phased around term time to minimise disruption to the school community.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Education</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>VIC</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="education">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #101816, #182422);">🌉</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Education</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>Deakin University — L&amp;M Bridge</h3>
+              <p>Tender program for the 245-metre Morgan's Walk pedestrian bridge connecting Deakin University's two Burwood campuses over Gardiners Creek, a signature piece of campus infrastructure.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Education / University</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Burwood, VIC</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="education">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #141614, #1e221e);">🏫</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Education</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>St Peters Primary School — Clayton</h3>
+              <p>Tender program for facility works at St Peter's Catholic Primary School in Clayton, serving Prep to Year 6 students in Melbourne's south-east.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Education</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Clayton, VIC</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="education">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #121818, #1a2426);">🔬</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Education</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>Monash University — Wind Tunnel Decommissioning</h3>
+              <p>Tender program for the decommissioning of the wind tunnel research facility at Monash University's engineering campus in Clayton, involving specialist technical sequencing and make-safe works.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Education / University</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Clayton, VIC</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="education">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #131614, #1d221e);">🏫</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Education</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>Holy Family Primary School — Doveton</h3>
+              <p>Tender program for facility upgrade works at Holy Family Catholic Primary School in Doveton, with programme delivery structured around the school calendar.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Education</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Doveton, VIC</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="education">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #121614, #1c2218);">🎭</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Education</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>La Salle — CAPA Building</h3>
+              <p>Tender program for a new Creative and Performing Arts building at La Salle Catholic College, delivering dedicated performance and rehearsal spaces for a growing school community.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Education</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>VIC</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="education">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #141814, #1e2620);">🏫</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Education</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>Brighton Grammar School</h3>
+              <p>Tender program for the G.B. Robertson Hall redevelopment at Brighton Grammar, including an indoor pool facility, new hall and oval refurbishment at one of Victoria's leading independent schools.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Education</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Brighton, VIC</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="education">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #0e1818, #162424);">💧</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Education</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>Deakin University — Waurn Ponds Water Features</h3>
+              <p>Tender program for cultural water features and integrated water management works at Deakin's Geelong Waurn Ponds campus, including wetlands conversion and water quality improvements.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Education / University</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Waurn Ponds, VIC</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="education">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #141614, #1e2220);">🤝</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Education</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>St Mary's College for the Deaf</h3>
+              <p>Tender program for works at St Mary's College for the Deaf in Victoria, a school delivering education from Prep to Year 12 for deaf and hard of hearing students across multiple campuses.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Education / Special</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>VIC</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="education">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #131814, #1d2420);">🏫</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Education</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>St Francis Catholic College — Cobblebank</h3>
+              <p>Tender program for the new St Francis Catholic College campus in Cobblebank, a secondary school facility designed for growth to 1,500 students serving the rapidly developing Melton corridor.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Education</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Cobblebank, VIC</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="education">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #121818, #1c2626);">🏋️</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Education</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>Nazareth College — Gym Expansion</h3>
+              <p>Tender program for the performing arts and gymnasium expansion at Nazareth College in Noble Park North, creating a multi-purpose space capable of accommodating over 1,000 people for whole-school gatherings.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Education</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Noble Park North, VIC</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== COMMERCIAL ===== -->
+        <div class="project-card-full reveal" data-category="commercial">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #1a1520, #2a2035);">🏢</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Commercial</span><span class="tag">Construction Programme</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>80 George Street — Back to Base Refit</h3>
+              <p>Construction programme for a back-to-base office refit in central Sydney. Work was sequenced around active building operations with strict access windows and noise requirements.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Commercial</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Sydney, NSW</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Construction Programme</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-full reveal" data-category="commercial">
+          <div class="project-thumb" style="background: linear-gradient(135deg, #181520, #24202e);">🛍️</div>
+          <div class="project-body">
+            <div class="project-tags" style="margin-top:1.5rem; padding:0 1.5rem;">
+              <span class="tag">Commercial</span><span class="tag">Tender Program</span>
+            </div>
+            <div style="padding:.75rem 1.5rem 1.5rem;">
+              <h3>Mecca — Canberra Centre</h3>
+              <p>Tender program for a new flagship Mecca Cosmetica store at Canberra Centre, featuring private beauty rooms and an expanded retail service offering within an active shopping centre.</p>
+              <div class="project-meta">
+                <div class="project-meta-item"><strong>Sector</strong><span>Commercial / Retail</span></div>
+                <div class="project-meta-item"><strong>Location</strong><span>Canberra, ACT</span></div>
+                <div class="project-meta-item"><strong>Type</strong><span>Tender Program</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta-banner">
+    <div class="container reveal">
+      <h2>Have a Project in Mind?</h2>
+      <p>Get in touch and I'll respond within one business day — faster for urgent tenders.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
+        <a href="services.html" class="btn btn-outline">Our Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="logo.svg" alt="PlanGenix" style="height:36px; margin-bottom:.75rem;">
+          <p>Expert tender programming and project controls services for contractors and developers across Australia.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Pages</h5>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="services.html">Tender Programming</a>
+          <a href="services.html">Construction Programs</a>
+          <a href="services.html">Project Controls</a>
+          <a href="services.html">Reporting &amp; Dashboards</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <address>
+            Sydney, NSW<br>
+            Australia<br><br>
+            <a href="mailto:mandip.desai@me.com">mandip.desai@me.com</a><br>
+            <a href="tel:+61425462424">+61 425 462 424</a>
+          </address>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 PlanGenix. All rights reserved.</span>
+        <span>Sydney, Australia</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
