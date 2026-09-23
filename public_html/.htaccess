@@ -1,0 +1,4 @@
+# Old deploys uploaded a duplicate copy of the site into /public_html/public_html/.
+# Send anything requested there to the real page. The folder can be deleted in cPanel.
+RewriteEngine On
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]

@@ -109,15 +109,37 @@ if (form && formSuccess) {
 
     if (!valid) return;
 
-    // Simulate submission
+    // Send via FormSubmit (https://formsubmit.co) to the PlanGenix inbox
     const btn = form.querySelector('button[type="submit"]');
+    const btnText = btn.textContent;
+    const formError = document.getElementById('form-error');
     btn.textContent = 'Sending…';
     btn.disabled = true;
+    if (formError) formError.style.display = 'none';
 
-    setTimeout(() => {
-      form.style.display = 'none';
-      formSuccess.style.display = 'block';
-    }, 1000);
+    const data = Object.fromEntries(new FormData(form));
+    // Send the readable option labels rather than the internal values
+    form.querySelectorAll('select').forEach(select => {
+      const option = select.options[select.selectedIndex];
+      data[select.name] = option && option.value ? option.text : '';
+    });
+
+    fetch('https://formsubmit.co/ajax/mandip@plangenix.com.au', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    })
+      .then(res => res.json().then(body => ({ ok: res.ok, body })))
+      .then(({ ok, body }) => {
+        if (!ok || String(body.success) !== 'true') throw new Error(body.message || 'Send failed');
+        form.style.display = 'none';
+        formSuccess.style.display = 'block';
+      })
+      .catch(() => {
+        btn.textContent = btnText;
+        btn.disabled = false;
+        if (formError) formError.style.display = 'block';
+      });
   });
 }
 

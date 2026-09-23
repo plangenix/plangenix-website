@@ -119,6 +119,9 @@
           <div class="contact-form" id="contact-form-wrap">
             <h3 style="color: var(--navy); margin-bottom: 1.5rem; font-size: 1.2rem;">Send Us a Message</h3>
             <form id="contact-form" novalidate>
+              <input type="hidden" name="_subject" value="New enquiry from plangenix.com.au">
+              <input type="hidden" name="_template" value="table">
+              <input type="text" name="_honey" style="display: none;" tabindex="-1" autocomplete="off">
               <div class="form-row">
                 <div class="form-group">
                   <label for="first-name">First Name *</label>
@@ -192,6 +195,9 @@
               <p>Thank you for reaching out. A member of the PlanGenix team will be in touch within one business day.</p>
               <a href="index.html" class="btn btn-outline-dark" style="margin-top: 1.5rem;">Back to Home</a>
             </div>
+            <p id="form-error" style="display: none; margin-top: 1rem; font-size: .85rem; color: #e53935; text-align: center;">
+              Sorry, your message couldn't be sent. Please email us directly at <a href="mailto:mandip@plangenix.com.au" style="color: inherit; text-decoration: underline;">mandip@plangenix.com.au</a>.
+            </p>
           </div>
         </div>
       </div>
