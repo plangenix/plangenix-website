@@ -123,6 +123,8 @@ if (form && formSuccess) {
       const option = select.options[select.selectedIndex];
       data[select.name] = option && option.value ? option.text : '';
     });
+    // FormSubmit sets the notification's reply-to from _replyto
+    data._replyto = data['Email'];
 
     fetch('https://formsubmit.co/ajax/mandip@plangenix.com.au', {
       method: 'POST',
